@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="AnvilConverter">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/AnvilConverter.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/lib/src" />
+    </SOURCES>
+  </library>
+</component>
