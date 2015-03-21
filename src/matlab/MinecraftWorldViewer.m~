@@ -202,8 +202,6 @@ function chunkY_Callback(hObject, eventdata, handles)
 
 % Hints: get(hObject,'String') returns contents of chunkY as text
 %        str2double(get(hObject,'String')) returns contents of chunkY as a double
-handles.chunky = str2double(get(hObject,'String'));
-guidata(hObject, handles);
 
 
 % --- Executes during object creation, after setting all properties.
@@ -224,5 +222,6 @@ function plotbutton2_Callback(hObject, eventdata, handles)
 % hObject    handle to plotbutton2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-data = handles.region.getChunkData(handles.chunkx, handles.chunky);
-plotChunk(data);
+x = get(handles.ChunkX,'Number');
+y = get(handles.ChunkY,'Number');
+data = region.getChunkData(x, y);
