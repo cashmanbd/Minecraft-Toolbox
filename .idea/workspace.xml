@@ -7,7 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89161eff-dc37-4893-8a42-d57330c6e9fa" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/matlab/MinecraftWorldViewer.fig" afterPath="$PROJECT_DIR$/src/matlab/MinecraftWorldViewer.fig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/matlab/MinecraftWorldViewer.m" afterPath="$PROJECT_DIR$/src/matlab/MinecraftWorldViewer.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/matlab/plotChunk.m" afterPath="$PROJECT_DIR$/src/matlab/plotChunk.m" />
     </list>
     <ignored path="MinecraftWorldViewer.iws" />
     <ignored path=".idea/workspace.xml" />

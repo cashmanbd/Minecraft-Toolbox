@@ -22,7 +22,7 @@ function varargout = MinecraftWorldViewer(varargin)
 
 % Edit the above text to modify the response to help MinecraftWorldViewer
 
-% Last Modified by GUIDE v2.5 19-Mar-2015 20:08:06
+% Last Modified by GUIDE v2.5 20-Mar-2015 21:32:30
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -225,4 +225,5 @@ function plotbutton2_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 data = handles.region.getChunkData(handles.chunkx, handles.chunky);
-plotChunk(data);
+
+plotChunk(data, handles.graph);
