@@ -1,10 +1,10 @@
-function plotChunk(chunk_data, h, block_id)
+function plotChunk(chunk_data, h, b)
     disp('Start plotting...');
     dimensions = size(chunk_data);
     for i=1:dimensions(1)
         for ii=1:dimensions(2)
             for iii=1:dimensions(3)
-                plotPoint(chunk_data,i,ii,iii,h, block_id);
+                plotPoint(chunk_data,i,ii,iii,h);
                 %hold on;
             end;
         end
@@ -16,7 +16,7 @@ function plotChunk(chunk_data, h, block_id)
     disp('Done plotChunk');
 end
 
-function plotPoint(chunk_data,i,j,k,h, block_id) 
+function plotPoint(chunk_data,i,j,k,h) 
     x = [i, i,   i,   i+1, i+1, i+1];
     y = [k, k+1, k+1, k+1, k,   k];
     z = [j, j,   j+1, j+1, j+1, j];
@@ -36,7 +36,7 @@ function plotPoint(chunk_data,i,j,k,h, block_id)
     p8 = [x y+1 z+1];
     
     block = chunk_data(i,j,k);
-    if (block == block_id)
+    if (block == 78)
         %fill3(x, y, z, getColor(block), 'EdgeColor', 'none', 'Parent', h);
         poly_rectangle(p1,p2,p3,p4,getColor(block),h);
         poly_rectangle(p5,p6,p7,p8,getColor(block),h);
