@@ -5,9 +5,12 @@ import com.mojang.nbt.CompoundTag;
 import com.mojang.nbt.ListTag;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Chunk {
     private List<CompoundTag> sectionList = new ArrayList<>();
+    private Map<Byte, Integer> blockTypeCount = new HashMap();
 
     protected void load(CompoundTag chunkTag) {
         CompoundTag level = (CompoundTag)chunkTag.get("Level");
@@ -26,11 +29,25 @@ public class Chunk {
             byte[] data = section.getByteArray("Blocks");
             for (int z = 0; z < 32; z++) {
                 for (int x = 0; x < 32; x++) {
-                    chunkData[x][y][z]= data[getBlockIndex(x,y,z)];
+                    int index = getBlockIndex(x,y,z);
+                    if (index < data.length) {
+                        byte blockType = data[index];
+                        chunkData[x][y][z]= blockType;
+                        if (blockTypeCount.containsKey(Byte.valueOf(blockType))) {
+                            Integer count = blockTypeCount.get(blockType);
+                            count++;
+                        } else {
+                            blockTypeCount.put(blockType, 1);
+                        }
+                    }
                 }
             }
         }
         return chunkData;
+    }
+
+    public Map<Byte, Integer> getBlockTypes() {
+        return blockTypeCount;
     }
 
     private int getBlockIndex(int x, int y, int z) {

@@ -22,7 +22,7 @@ function varargout = MinecraftWorldViewer(varargin)
 
 % Edit the above text to modify the response to help MinecraftWorldViewer
 
-% Last Modified by GUIDE v2.5 01-Apr-2015 21:13:00
+% Last Modified by GUIDE v2.5 02-Apr-2015 19:58:16
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -132,8 +132,10 @@ function loadbutton1_Callback(hObject, eventdata, handles)
 javaaddpath('../../out/artifacts/MinecraftWorldViewer_jar/MinecraftWorldViewer.jar');
 javaaddpath('../../lib/AnvilConverter.jar');
 
-saves = get(handles.savepopupmenu,'Value');
-location = fullfile(getLocation(), saves);
+saves = get(handles.savepopupmenu,'String');
+index = get(handles.savepopupmenu,'Value');
+saves(index)
+location = fullfile(getLocation(), saves(index));
 loader = com.matlabworld.Loader(java.lang.String(location));
 
 world = loader.getRegions();
@@ -202,8 +204,7 @@ function plotbutton2_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 data = handles.region.getChunkData(handles.chunkx, handles.chunky);
-
-plotChunk(data, handles.graph);
+plotChunk(data, handles.graph, handles.block_id);
 
 
 % --- Executes on selection change in savepopupmenu.
@@ -229,3 +230,28 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 saves = getSaves();
 set(hObject,'string',saves);
+
+
+
+function blockIDEntry_Callback(hObject, eventdata, handles)
+% hObject    handle to blockIDEntry (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of blockIDEntry as text
+%        str2double(get(hObject,'String')) returns contents of blockIDEntry as a double
+handles.block_id = str2double(get(hObject,'String'));
+guidata(hObject, handles);
+
+% --- Executes during object creation, after setting all properties.
+function blockIDEntry_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to blockIDEntry (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
