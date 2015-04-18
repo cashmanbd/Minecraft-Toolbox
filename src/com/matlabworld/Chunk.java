@@ -17,7 +17,6 @@ public class Chunk {
         ListTag section = (ListTag)level.get("Sections");
         for (int i = 0; i < section.size(); i++) {
             CompoundTag sectionCompoundTag = (CompoundTag)section.get(i);
-            System.out.println("sectionCompoundTag: " + sectionCompoundTag + " " + i);
             sectionList.add(sectionCompoundTag);
         }
     }
@@ -36,8 +35,9 @@ public class Chunk {
                         if (blockTypeCount.containsKey(Byte.valueOf(blockType))) {
                             Integer count = blockTypeCount.get(blockType);
                             count++;
+                            blockTypeCount.put(Byte.valueOf(blockType), count);
                         } else {
-                            blockTypeCount.put(blockType, 1);
+                            blockTypeCount.put(Byte.valueOf(blockType), 1);
                         }
                     }
                 }

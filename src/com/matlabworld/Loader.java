@@ -23,7 +23,7 @@ public class Loader {
         addRegionFiles(new File(baseLocation), normalRegions);
         for (final File regionFile : normalRegions) {
             RegionFile region = new RegionFile(regionFile);
-            List<byte[][][]> chunkData = new ArrayList<>();
+            List<Chunk> chunkList = new ArrayList<>();
             for (int x = 0; x < 32; x++) {
                 for (int z = 0; z < 32; z++) {
                     if (region.hasChunk(x, z)) {
@@ -37,12 +37,13 @@ public class Loader {
 
                         Chunk chunk = new Chunk();
                         chunk.load(chunkTag);
-                        chunkData.add(chunk.getChunkData());
+                        chunkList.add(chunk);
                     }
                 }
             }
-            regionList.add(new Region(chunkData));
+            regionList.add(new Region(chunkList));
         }
+        System.out.println("Read in " + regionList.size() + " regions.");
     }
 
     public List<Region> getRegions() {
@@ -50,11 +51,15 @@ public class Loader {
     }
 
     public class Region {
-        final List<byte[][][]> chunkData;
-        protected Region(final List<byte[][][]> chunkData) {
+        final List<Chunk> chunkData;
+        protected Region(final List<Chunk> chunkData) {
             this.chunkData = chunkData;
         }
         public byte[][][] getChunkData(final int x, final int y) {
+            return chunkData.get(x + (y * 32)).getChunkData();
+        }
+
+        public Chunk getChunk(final int x, final int y) {
             return chunkData.get(x + (y * 32));
         }
     }
