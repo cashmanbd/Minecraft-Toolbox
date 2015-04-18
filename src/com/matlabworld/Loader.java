@@ -44,6 +44,9 @@ public class Loader {
             regionList.add(new Region(chunkList));
         }
         System.out.println("Read in " + regionList.size() + " regions.");
+        for (int i = 0; i < regionList.size(); i++) {
+            System.out.println("Region " + (i+1) + " has " + regionList.get(i).getChunkCount() + " Chunks");
+        }
     }
 
     public List<Region> getRegions() {
@@ -52,9 +55,11 @@ public class Loader {
 
     public class Region {
         final List<Chunk> chunkData;
+
         protected Region(final List<Chunk> chunkData) {
             this.chunkData = chunkData;
         }
+
         public byte[][][] getChunkData(final int x, final int y) {
             return chunkData.get(x + (y * 32)).getChunkData();
         }
@@ -62,12 +67,15 @@ public class Loader {
         public Chunk getChunk(final int x, final int y) {
             return chunkData.get(x + (y * 32));
         }
+
+        public int getChunkCount() {
+            return chunkData.size();
+        }
     }
 
     private void addRegionFiles(final File baseFolder, final List<File> regionFiles) {
 
         File regionFolder = new File(baseFolder, "region");
-        System.out.println(regionFolder.exists());
         File[] list = regionFolder.listFiles(new FilenameFilter() {
             public boolean accept(File dir, String name) {
                 return name.endsWith(RegionFile.ANVIL_EXTENSION);

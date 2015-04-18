@@ -7,7 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89161eff-dc37-4893-8a42-d57330c6e9fa" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/matlabworld/Chunk.java" afterPath="$PROJECT_DIR$/src/com/matlabworld/Chunk.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/matlabworld/Loader.java" afterPath="$PROJECT_DIR$/src/com/matlabworld/Loader.java" />
     </list>
     <ignored path="MinecraftWorldViewer.iws" />
@@ -119,29 +118,29 @@
       <file leaf-file-name="CompoundTag.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/src/com/mojang/nbt/CompoundTag.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="39" selection-start="381" selection-end="381" vertical-scroll-proportion="0.0">
+            <state line="136" column="30" selection-start="3443" selection-end="3452" vertical-scroll-proportion="-5.48">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Loader.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Loader.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/matlabworld/Loader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="73" selection-start="1749" selection-end="1749" vertical-scroll-proportion="0.0">
+            <state line="43" column="35" selection-start="1650" selection-end="1650" vertical-scroll-proportion="0.08283132">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2507#2678#0" expanded="true" />
-                <element signature="e#2667#2668#0" expanded="true" />
+                <element signature="e#2716#2887#0" expanded="true" />
+                <element signature="e#2876#2877#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Chunk.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Chunk.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/matlabworld/Chunk.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="77" selection-start="1584" selection-end="1584" vertical-scroll-proportion="0.4885845">
+            <state line="27" column="22" selection-start="976" selection-end="976" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -194,8 +193,8 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/matlabworld/Loader.java" />
         <option value="$PROJECT_DIR$/src/com/matlabworld/Chunk.java" />
+        <option value="$PROJECT_DIR$/src/com/matlabworld/Loader.java" />
       </list>
     </option>
   </component>
@@ -548,7 +547,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32658958" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32658958" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2496361" sideWeight="0.60115606" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -714,27 +713,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/src/com/mojang/nbt/CompoundTag.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="39" selection-start="381" selection-end="381" vertical-scroll-proportion="0.0">
+        <state line="136" column="30" selection-start="3443" selection-end="3452" vertical-scroll-proportion="-5.48">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/matlabworld/Loader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="73" selection-start="1749" selection-end="1749" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2507#2678#0" expanded="true" />
-            <element signature="e#2667#2668#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/matlabworld/Chunk.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="77" selection-start="1584" selection-end="1584" vertical-scroll-proportion="0.4885845">
+        <state line="27" column="22" selection-start="976" selection-end="976" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/matlabworld/Loader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="35" selection-start="1650" selection-end="1650" vertical-scroll-proportion="0.08283132">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2716#2887#0" expanded="true" />
+            <element signature="e#2876#2877#0" expanded="true" />
           </folding>
         </state>
       </provider>
