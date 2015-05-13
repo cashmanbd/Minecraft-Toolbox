@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.FilenameFilter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
@@ -24,14 +25,18 @@ public class Loader {
         for (final File regionFile : normalRegions) {
             RegionFile region = new RegionFile(regionFile);
             List<Chunk> chunkList = new ArrayList<>();
+            int[][] regionFootprint = new int[32][32];
+
             for (int x = 0; x < 32; x++) {
                 for (int z = 0; z < 32; z++) {
+                    regionFootprint[x][z] = 0;
                     if (region.hasChunk(x, z)) {
                         DataInputStream regionChunkInputStream = region.getChunkDataInputStream(x, z);
                         if (regionChunkInputStream == null) {
                             System.out.println("Failed to fetch input stream");
                             continue;
                         }
+                        regionFootprint[x][z] = 1;
                         CompoundTag chunkTag = NbtIo.read(regionChunkInputStream);
                         regionChunkInputStream.close();
 
@@ -41,7 +46,7 @@ public class Loader {
                     }
                 }
             }
-            regionList.add(new Region(chunkList));
+            regionList.add(new Region(chunkList, regionFootprint));
         }
         System.out.println("Read in " + regionList.size() + " regions.");
         for (int i = 0; i < regionList.size(); i++) {
@@ -55,9 +60,11 @@ public class Loader {
 
     public class Region {
         final List<Chunk> chunkData;
+        final int[][] footprint;
 
-        protected Region(final List<Chunk> chunkData) {
+        protected Region(final List<Chunk> chunkData, final int[][] footprint) {
             this.chunkData = chunkData;
+            this.footprint = footprint;
         }
 
         public byte[][][] getChunkData(final int x, final int y) {
@@ -70,6 +77,10 @@ public class Loader {
 
         public int getChunkCount() {
             return chunkData.size();
+        }
+
+        public int[][] getFootprint() {
+            return footprint;
         }
     }
 
