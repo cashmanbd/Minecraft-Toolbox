@@ -8,6 +8,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="AnvilConverter" level="project" />
+    <orderEntry type="library" name="J2Blocks" level="project" />
   </component>
 </module>
 
